@@ -1,6 +1,6 @@
 const SB_URL="https://puxzsxhrlghbzatzsiyg.supabase.co";
 const SB_KEY="sb_publishable_u0gjKD7XY4z5v5B1-vKFww_0EYGuX22";
-const supa=window.supabase.createClient(SB_URL,SB_KEY);
+const supa=window.supabase.createClient(SB_URL,SB_KEY,{auth:{storageKey:"taller-empleados-auth",persistSession:true,autoRefreshToken:true,detectSessionInUrl:false}});
 const S={user:null,profile:null,tab:"Inicio",orders:[]};
 function avatarHtml(size="md"){if(S.profile?.avatar_url)return '<img class="avatar '+size+'" src="'+esc(S.profile.avatar_url)+'" alt="Foto de perfil">';const initials=(S.profile?.full_name||S.user?.email||"TE").split(" ").map(x=>x[0]).join("").slice(0,2).toUpperCase();return '<div class="avatar fallback '+size+'">'+esc(initials)+'</div>'}
 const esc=v=>String(v??"").replace(/[&<>"']/g,m=>({"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;","'":"&#039;"}[m]));
