@@ -1,18 +1,19 @@
 # Taller Empleados
 
-PWA operativa para personal de taller.
+PWA operativa conectada al mismo backend de Taller Admin.
 
-## Funciones MVP
+## Funciones conectadas
+- Login individual
 - Órdenes asignadas
-- Estados de trabajo
-- Diagnóstico técnico
+- Cambio de estado
+- Diagnósticos
 - Trabajo en equipo
 - Piezas utilizadas
-- Evidencias
-- Cierre/validación de trabajo
+- Evidencias (fotos/PDF)
+- Actualización en tiempo real
 
-## Conexión prevista
-Este portal comparte backend con **-taller-admin**. El backend real debe aplicar permisos por rol y autenticación individual.
+## Acceso
+El usuario del empleado se crea desde **Taller Admin > Empleados**. No existe registro público de empleados.
 
 ## Seguridad
-El login actual es demostrativo/local para validar UX. No debe utilizarse como autenticación de producción.
+Supabase Auth + Row Level Security. Cada técnico recibe únicamente las órdenes que tenga asignadas, salvo perfiles administrativos.
